@@ -1,0 +1,23 @@
+FROM python:3.11-slim
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg git \
+    && rm -rf /var/lib/apt/lists/*
+
+# TORCH_VARIANT=cpu (default) installs the slim CPU-only wheel from PyTorch's
+# dedicated index, avoiding several GB of unused CUDA/cuDNN deps.
+# TORCH_VARIANT=cuda installs the standard PyPI wheel, which bundles CUDA
+# support and is what a GPU host (see docker-compose.gpu.yml) needs.
+ARG TORCH_VARIANT=cpu
+COPY requirements-base.txt requirements-worker.txt ./
+RUN if [ "$TORCH_VARIANT" = "cuda" ]; then \
+        pip install --no-cache-dir torch; \
+    else \
+        pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch; \
+    fi \
+    && pip install --no-cache-dir -r requirements-worker.txt
+
+COPY app ./app
+
+ENV PYTHONPATH=/app
+CMD ["celery", "-A", "app.worker.celery_app", "worker", "--loglevel=info", "--concurrency=1"]

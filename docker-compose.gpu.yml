@@ -1,0 +1,15 @@
+# GPU override for a machine with an NVIDIA GPU + CUDA + nvidia-container-toolkit.
+# Usage (also set USE_GPU=true in .env):
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build worker
+services:
+  worker:
+    build:
+      args:
+        TORCH_VARIANT: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

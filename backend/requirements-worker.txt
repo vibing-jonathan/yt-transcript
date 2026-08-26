@@ -1,0 +1,10 @@
+-r requirements-base.txt
+celery[redis]>=5.4
+accelerate>=0.33
+yt-dlp>=2024.8.6
+google-genai>=0.3
+tenacity>=8.5
+
+# Pulls in transformers>=5.6,<6, librosa, soundfile, etc. Pinned to a specific
+# commit for reproducibility (upstream has no PyPI package / release tags).
+moss-transcribe-diarize @ git+https://github.com/OpenMOSS/MOSS-Transcribe-Diarize.git@cb765f2b0fe6f7a298aa2002e2281ae693d1f3c3
