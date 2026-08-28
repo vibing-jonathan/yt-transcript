@@ -8,6 +8,7 @@ COPY alembic.ini ./
 COPY alembic ./alembic
 COPY app ./app
 COPY docker-entrypoint-api.sh ./
-RUN chmod +x docker-entrypoint-api.sh
+# Strip any CR left by a Windows checkout so the shebang resolves on Linux.
+RUN sed -i 's/\r$//' docker-entrypoint-api.sh && chmod +x docker-entrypoint-api.sh
 
 CMD ["./docker-entrypoint-api.sh"]
