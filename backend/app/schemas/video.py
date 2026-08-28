@@ -30,11 +30,11 @@ class VideoSummary(BaseModel):
     duration_seconds: int | None
     thumbnail_url: str | None
     status: VideoStatus
+    summary: str | None = None
     created_at: datetime
 
 
 class VideoDetail(VideoSummary):
-    summary: str | None
     transcript_text: str | None
     error_message: str | None
     processing_started_at: datetime | None

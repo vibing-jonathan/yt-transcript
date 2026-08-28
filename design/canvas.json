@@ -1,0 +1,20 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Redesign" },
+    { "id": "page-2", "name": "Other directions" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "page": "page-1", "x": 0, "y": 0, "w": 1200, "h": 1480, "title": "Library" },
+    { "file": "VideoDetail.dc.html", "page": "page-1", "x": 1360, "y": 0, "w": 1200, "h": 1580, "title": "Transcript view" },
+    { "file": "Processing.dc.html", "page": "page-1", "x": 2760, "y": 0, "w": 1000, "h": 900, "title": "While it processes" },
+    { "file": "Empty.dc.html", "page": "page-1", "x": 0, "y": 1660, "w": 1200, "h": 900, "title": "Empty library (first run)" },
+    { "file": "Mobile.dc.html", "page": "page-1", "x": 1360, "y": 1780, "w": 390, "h": 844, "title": "Library (mobile)" },
+    { "file": "DirectionYouTube.dc.html", "page": "page-2", "x": 0, "y": 0, "w": 900, "h": 720, "title": "Direction B" },
+    { "file": "DirectionDark.dc.html", "page": "page-2", "x": 1060, "y": 0, "w": 900, "h": 720, "title": "Direction C" }
+  ],
+  "annotations": [
+    { "id": "brief", "page": "page-1", "x": -340, "y": 0, "w": 280, "text": "Redesign of yt·transcribe — editorial / reading-first direction.\n\nWarm off-white, Newsreader (serif display) + IBM Plex Sans/Mono, one terracotta accent. The summary and transcript are treated as the product.\n\nStatic mockups — to be built into the React app once the direction is signed off." },
+    { "id": "alts", "page": "page-2", "x": -340, "y": 0, "w": 280, "text": "Two directions that were NOT chosen, kept as low-fi sketches so you can see the alternatives.\n\nB: clean light, YouTube-native grid.\nC: dark power-user tool.\n\nThe chosen editorial direction is on the Redesign page." }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

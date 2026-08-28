@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #faf8f3; color: #262019;
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+      font-weight: 500; margin: 0; letter-spacing: -0.01em; }
+    a { color: #b1502f; text-decoration: none; }
+    a:hover { color: #8c3c22; }
+  </style>
+</helmet>
+
+<div style="width: 390px; min-height: 844px; background: #faf8f3;">
+
+  <!-- header -->
+  <div style="padding: 16px 18px 12px; border-bottom: 1px solid #e8e2d5;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: baseline; gap: 2px; font-family: 'Newsreader', Georgia, serif; font-size: 19px;">
+        <span style="font-weight: 600;">yt</span><span style="color: #b1502f; font-weight: 600;">&middot;</span><span style="font-weight: 400;">transcribe</span>
+      </div>
+      <span class="mono" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9b9284;">24</span>
+    </div>
+    <div style="margin-top: 12px; display: flex; align-items: center; gap: 9px; height: 44px; padding: 0 13px; background: #fffdf9; border: 1px solid #e0d9c9; border-radius: 9px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9b9284" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+      <span style="color: #9b9284; font-size: 13.5px;">Search or paste a link&hellip;</span>
+    </div>
+  </div>
+
+  <div style="padding: 16px 18px 28px;">
+    <h2 style="font-size: 22px; margin-bottom: 4px;">Library</h2>
+
+    <!-- processing -->
+    <div style="margin-top: 12px; background: #fffdf9; border: 1px solid #e8e2d5; border-radius: 10px; padding: 12px 14px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b1502f" stroke-width="2.2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.2-8.6"></path></svg>
+        <span style="font-size: 13px; font-weight: 500;">The Future of Local-First Apps</span>
+      </div>
+      <div style="margin-top: 8px; height: 3px; border-radius: 999px; background: #efe9db; overflow: hidden;"><div style="width: 62%; height: 100%; background: #b1502f;"></div></div>
+      <div style="margin-top: 6px; font-size: 11.5px; color: #8a8271;">Transcribing &amp; labeling speakers</div>
+    </div>
+
+    <!-- cards -->
+    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 22px;">
+
+      <div>
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 9px; background: linear-gradient(150deg, #2f3a44, #4a5560);">
+          <span class="mono" style="position: absolute; bottom: 6px; right: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #fff; background: rgba(20,16,12,0.82); padding: 2px 6px; border-radius: 4px;">41:12</span>
+        </div>
+        <h3 style="margin-top: 10px; font-size: 17px; line-height: 1.28;">The case for small language models</h3>
+        <div style="margin-top: 5px; font-size: 12px; color: #726a5d;">Latent Space &middot; 2 speakers &middot; 41 min</div>
+        <p style="margin: 7px 0 0; font-size: 12.5px; line-height: 1.5; color: #6b6459; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Fine-tuned 7&ndash;13B models now beat frontier APIs on cost and latency for most production workloads, with a large model kept only as a fallback.</p>
+      </div>
+
+      <div>
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 9px; background: linear-gradient(150deg, #3a2f44, #574a60);">
+          <span class="mono" style="position: absolute; bottom: 6px; right: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #fff; background: rgba(20,16,12,0.82); padding: 2px 6px; border-radius: 4px;">27:38</span>
+        </div>
+        <h3 style="margin-top: 10px; font-size: 17px; line-height: 1.28;">How Postgres full-text search actually works</h3>
+        <div style="margin-top: 5px; font-size: 12px; color: #726a5d;">Hussein Nasser &middot; 1 speaker &middot; 27 min</div>
+        <p style="margin: 7px 0 0; font-size: 12.5px; line-height: 1.5; color: #6b6459; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">tsvector, GIN indexes, and ts_rank &mdash; with benchmarks for when websearch_to_tsquery beats a trigram index.</p>
+      </div>
+
+      <div>
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 9px; background: linear-gradient(150deg, #2f4438, #4a6052);">
+          <span class="mono" style="position: absolute; bottom: 6px; right: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #fff; background: rgba(20,16,12,0.82); padding: 2px 6px; border-radius: 4px;">33:05</span>
+        </div>
+        <h3 style="margin-top: 10px; font-size: 17px; line-height: 1.28;">Diarization in 2025: what actually changed</h3>
+        <div style="margin-top: 5px; font-size: 12px; color: #726a5d;">MOSS Team &middot; 3 speakers &middot; 33 min</div>
+        <p style="margin: 7px 0 0; font-size: 12.5px; line-height: 1.5; color: #6b6459; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Joint transcription-and-diarization models have closed most of the gap with dedicated pipelines.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

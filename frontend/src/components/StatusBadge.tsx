@@ -1,36 +1,31 @@
 import type { VideoStatus } from "../types/video";
+import { CheckIcon } from "./icons";
 
 const LABELS: Record<VideoStatus, string> = {
   queued: "Queued",
   downloading: "Downloading",
   transcribing: "Transcribing",
   summarizing: "Summarizing",
-  completed: "Completed",
+  completed: "Transcribed",
   failed: "Failed",
 };
 
-const COLORS: Record<VideoStatus, string> = {
-  queued: "#6b7280",
-  downloading: "#2563eb",
-  transcribing: "#2563eb",
-  summarizing: "#2563eb",
-  completed: "#16a34a",
-  failed: "#dc2626",
+type Tone = "ok" | "progress" | "danger" | "neutral";
+
+const TONES: Record<VideoStatus, Tone> = {
+  queued: "neutral",
+  downloading: "progress",
+  transcribing: "progress",
+  summarizing: "progress",
+  completed: "ok",
+  failed: "danger",
 };
 
 export function StatusBadge({ status }: { status: VideoStatus }) {
+  const tone = TONES[status];
   return (
-    <span
-      style={{
-        display: "inline-block",
-        padding: "2px 8px",
-        borderRadius: 999,
-        fontSize: 12,
-        fontWeight: 600,
-        color: "#fff",
-        backgroundColor: COLORS[status],
-      }}
-    >
+    <span className={`status-chip status-chip--${tone}`}>
+      {status === "completed" && <CheckIcon size={12} />}
       {LABELS[status]}
     </span>
   );

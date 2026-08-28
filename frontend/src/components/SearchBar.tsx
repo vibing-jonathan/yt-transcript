@@ -2,12 +2,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { submitVideo } from "../api/client";
 import { looksLikeYouTubeUrl } from "../utils/youtubeUrl";
+import { SearchIcon, LinkIcon } from "./icons";
 
-export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
+type Props = {
+  onSearch: (query: string) => void;
+  variant?: "header" | "hero";
+  placeholder?: string;
+  autoFocus?: boolean;
+};
+
+export function SearchBar({ onSearch, variant = "header", placeholder, autoFocus }: Props) {
   const [value, setValue] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  const isUrl = looksLikeYouTubeUrl(value.trim());
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -30,22 +40,38 @@ export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
     }
   }
 
+  const fallbackPlaceholder =
+    variant === "hero"
+      ? "https://youtube.com/watch?v=…"
+      : "Search transcripts, or paste a YouTube link…";
+
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", gap: 8, marginBottom: 24 }}>
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="Search the library, or paste a YouTube link…"
-        style={{ flex: 1, padding: "10px 14px", borderRadius: 999, border: "1px solid #d1d5db", fontSize: 14 }}
-      />
-      <button
-        type="submit"
-        disabled={submitting}
-        style={{ padding: "10px 20px", borderRadius: 999, border: "none", background: "#111827", color: "#fff", fontSize: 14 }}
-      >
-        {submitting ? "Adding…" : "Go"}
+    <form className={`searchbar searchbar--${variant}`} onSubmit={handleSubmit}>
+      <div className="searchbar__field">
+        <span className="searchbar__icon">{isUrl ? <LinkIcon /> : <SearchIcon />}</span>
+        <input
+          className="searchbar__input"
+          value={value}
+          autoFocus={autoFocus}
+          onChange={(e) => {
+            setValue(e.target.value);
+            if (error) setError(null);
+            if (e.target.value.trim() === "") onSearch("");
+          }}
+          placeholder={placeholder ?? fallbackPlaceholder}
+          aria-label={placeholder ?? fallbackPlaceholder}
+        />
+      </div>
+      <button className="searchbar__btn" type="submit" disabled={submitting}>
+        {submitting
+          ? "Adding…"
+          : variant === "hero"
+            ? "Transcribe"
+            : isUrl
+              ? "Go"
+              : "Search"}
       </button>
-      {error && <span style={{ color: "#dc2626", alignSelf: "center", fontSize: 13 }}>{error}</span>}
+      {error && <span className="searchbar__error">{error}</span>}
     </form>
   );
 }

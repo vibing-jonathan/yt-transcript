@@ -24,6 +24,14 @@ _ACTIVE_STATUSES = {
     VideoStatus.COMPLETED,
 }
 
+# Statuses that mean "still working on it" — used by the library's processing strip.
+_PROCESSING_STATUSES = [
+    VideoStatus.QUEUED,
+    VideoStatus.DOWNLOADING,
+    VideoStatus.TRANSCRIBING,
+    VideoStatus.SUMMARIZING,
+]
+
 
 @router.post("/videos", response_model=VideoSummary, status_code=201)
 def submit_video(payload: SubmitVideoRequest, response: Response, db: Session = Depends(get_db)):
@@ -58,14 +66,19 @@ def submit_video(payload: SubmitVideoRequest, response: Response, db: Session = 
 @router.get("/videos", response_model=VideoListResponse)
 def list_videos(
     q: str | None = None,
-    status: VideoStatus | None = None,
+    status: str | None = None,
     page: int = Query(default=1, ge=1),
     page_size: int = Query(default=24, ge=1, le=100),
     db: Session = Depends(get_db),
 ):
     filters = []
-    if status is not None:
-        filters.append(Video.status == status)
+    if status == "processing":
+        filters.append(Video.status.in_(_PROCESSING_STATUSES))
+    elif status is not None:
+        try:
+            filters.append(Video.status == VideoStatus(status))
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=f"Unknown status: {status}") from exc
     else:
         filters.append(Video.status == VideoStatus.COMPLETED)
 

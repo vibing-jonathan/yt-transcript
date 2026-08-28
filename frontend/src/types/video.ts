@@ -14,6 +14,7 @@ export interface VideoSummary {
   duration_seconds: number | null;
   thumbnail_url: string | null;
   status: VideoStatus;
+  summary: string | null;
   created_at: string;
 }
 
@@ -26,7 +27,6 @@ export interface TranscriptSegment {
 }
 
 export interface VideoDetail extends VideoSummary {
-  summary: string | null;
   transcript_text: string | null;
   error_message: string | null;
   processing_started_at: string | null;

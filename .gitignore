@@ -5,5 +5,8 @@ venv/
 .env
 node_modules/
 frontend/dist/
+
+# Seeded design-canvas bundle — regenerate from design/*.dc.html with the seed helper
+design/yt-transcribe-redesign.html
 *.egg-info/
 .DS_Store

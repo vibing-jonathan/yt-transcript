@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #faf8f3; color: #262019;
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+      font-weight: 500; margin: 0; letter-spacing: -0.01em; }
+    a { color: #b1502f; text-decoration: none; }
+    a:hover { color: #8c3c22; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; min-height: 1580px; background: #faf8f3; font-size: 15px;">
+
+  <!-- Top bar -->
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 40px; border-bottom: 1px solid #e8e2d5;">
+    <div style="display: flex; align-items: baseline; gap: 2px; font-family: 'Newsreader', Georgia, serif; font-size: 21px;">
+      <span style="font-weight: 600;">yt</span><span style="color: #b1502f; font-weight: 600;">&middot;</span><span style="font-weight: 400;">transcribe</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; width: 460px; height: 40px; padding: 0 14px; background: #fffdf9; border: 1px solid #e0d9c9; border-radius: 8px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9b9284" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+      <span style="color: #9b9284; font-size: 14px;">Search transcripts, or paste a YouTube link&hellip;</span>
+    </div>
+  </div>
+
+  <div style="max-width: 1080px; margin: 0 auto; padding: 28px 40px 96px;">
+
+    <a href="#" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #726a5d;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Library
+    </a>
+
+    <!-- Title block -->
+    <div style="margin-top: 18px;">
+      <h1 style="font-size: 38px; line-height: 1.15; max-width: 900px;">The case for small language models</h1>
+      <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #726a5d;">
+        <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: #3f6045; background: #eaf1e7; border: 1px solid #d3e2cc; padding: 4px 9px; border-radius: 999px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Transcribed
+        </span>
+        <span style="color: #3f382e; font-weight: 500;">Latent Space</span>
+        <span style="color: #cfc6b4;">&middot;</span><span>Aug 24, 2026</span>
+        <span style="color: #cfc6b4;">&middot;</span><span>41 min</span>
+        <span style="color: #cfc6b4;">&middot;</span><span>2 speakers</span>
+      </div>
+    </div>
+
+    <!-- Player -->
+    <div style="margin-top: 22px; position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; background: linear-gradient(150deg, #2f3a44, #4a5560); overflow: hidden;">
+      <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 68px; height: 68px; border-radius: 999px; background: rgba(250,248,243,0.94); display: flex; align-items: center; justify-content: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#262019"><path d="M8 5v14l11-7z"></path></svg>
+        </div>
+      </div>
+      <span style="position: absolute; left: 14px; bottom: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: rgba(255,255,255,0.85);">Embedded from YouTube &mdash; original player</span>
+    </div>
+
+    <!-- Summary + transcript -->
+    <div style="margin-top: 34px; display: grid; grid-template-columns: 380px 1fr; gap: 40px; align-items: start;">
+
+      <!-- Summary -->
+      <div>
+        <h2 style="font-size: 22px; margin-bottom: 12px;">Summary</h2>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.62; color: #3d372e;">Two practitioners make the case that small, task-specific models have quietly become the right default for production. Fine-tuned 7&ndash;13B models now match or beat frontier APIs on the narrow jobs most apps actually run, at a fraction of the cost and latency, with a large model kept in reserve only for low-confidence outputs.</p>
+        <h3 style="font-size: 15px; font-family: 'IBM Plex Sans', sans-serif; font-weight: 600; margin: 22px 0 10px; color: #262019;">Key takeaways</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px;">
+          <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.5; color: #3d372e;"><span style="color: #b1502f; flex-shrink: 0;">&mdash;</span>Narrow fine-tunes beat general APIs on cost-per-token by roughly 20&times; for classification and extraction.</li>
+          <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.5; color: #3d372e;"><span style="color: #b1502f; flex-shrink: 0;">&mdash;</span>A confidence-gated router sends only 5&ndash;10% of traffic to a large model.</li>
+          <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.5; color: #3d372e;"><span style="color: #b1502f; flex-shrink: 0;">&mdash;</span>Eval sets matter more than model choice; build 200 labeled examples before picking anything.</li>
+          <li style="display: flex; gap: 10px; font-size: 13.5px; line-height: 1.5; color: #3d372e;"><span style="color: #b1502f; flex-shrink: 0;">&mdash;</span>Latency budgets, not accuracy, are what usually forces the small-model decision.</li>
+        </ul>
+      </div>
+
+      <!-- Transcript -->
+      <div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
+          <h2 style="font-size: 22px;">Transcript</h2>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9b9284;">click a timestamp to jump</span>
+        </div>
+
+        <div style="border-top: 1px solid #e8e2d5;">
+
+          <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #ede8dc;">
+            <a href="#" style="flex-shrink: 0; width: 46px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #b1502f; padding-top: 2px;">0:04</a>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 3px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #3d6a78;"></span><span style="font-size: 12.5px; font-weight: 600; color: #2f5461;">Alessio</span></div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #3d372e;">So the thesis this week is that most teams shipping LLM features are overpaying by an order of magnitude, and they don&rsquo;t know it because the API bill is still small in absolute terms.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #ede8dc;">
+            <a href="#" style="flex-shrink: 0; width: 46px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #b1502f; padding-top: 2px;">0:21</a>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 3px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #9a6b3f;"></span><span style="font-size: 12.5px; font-weight: 600; color: #7c5430;">Swyx</span></div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #3d372e;">Right, and the moment you hit real volume &mdash; say a million requests a day &mdash; the math flips hard. A 7B model you host yourself is maybe a twentieth of the cost, and the latency is half.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #ede8dc;">
+            <a href="#" style="flex-shrink: 0; width: 46px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #b1502f; padding-top: 2px;">0:39</a>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 3px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #3d6a78;"></span><span style="font-size: 12.5px; font-weight: 600; color: #2f5461;">Alessio</span></div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #3d372e;">The catch is you now own an eval problem. You can&rsquo;t just trust the vendor&rsquo;s model card. We spent about two weeks building a labeled set before we trusted any of the fine-tunes.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #ede8dc;">
+            <a href="#" style="flex-shrink: 0; width: 46px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #b1502f; padding-top: 2px;">1:02</a>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 3px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #9a6b3f;"></span><span style="font-size: 12.5px; font-weight: 600; color: #7c5430;">Swyx</span></div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #3d372e;">And that set pays for itself immediately, because now you can swap models every quarter as new ones land and actually measure whether the swap helped.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #ede8dc;">
+            <a href="#" style="flex-shrink: 0; width: 46px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #b1502f; padding-top: 2px;">1:24</a>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 3px;"><span style="width: 8px; height: 8px; border-radius: 999px; background: #3d6a78;"></span><span style="font-size: 12.5px; font-weight: 600; color: #2f5461;">Alessio</span></div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6b6459;">Let&rsquo;s get into the routing setup, because I think that&rsquo;s the part people get wrong&hellip;</p>
+            </div>
+          </div>
+
+        </div>
+        <div style="margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #b3aa98;">+ 214 more segments</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

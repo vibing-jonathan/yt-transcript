@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #faf8f3; color: #262019;
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+      font-weight: 500; margin: 0; letter-spacing: -0.01em; }
+    a { color: #b1502f; text-decoration: none; }
+    a:hover { color: #8c3c22; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; min-height: 900px; background: #faf8f3; font-size: 15px;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 40px; border-bottom: 1px solid #e8e2d5;">
+    <div style="display: flex; align-items: baseline; gap: 2px; font-family: 'Newsreader', Georgia, serif; font-size: 21px;">
+      <span style="font-weight: 600;">yt</span><span style="color: #b1502f; font-weight: 600;">&middot;</span><span style="font-weight: 400;">transcribe</span>
+    </div>
+  </div>
+
+  <div style="max-width: 680px; margin: 0 auto; padding: 96px 40px 80px; text-align: center;">
+
+    <div style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #f1ddd4; margin-bottom: 26px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b1502f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"></path><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="13" y2="17"></line></svg>
+    </div>
+
+    <h1 style="font-size: 40px; line-height: 1.16;">Turn any YouTube video into a transcript you can search.</h1>
+    <p style="margin: 16px auto 0; max-width: 520px; font-size: 15px; line-height: 1.6; color: #6b6459;">Paste a link. We pull the audio, transcribe it with speakers labeled, and write a short summary &mdash; then it&rsquo;s in your library, searchable by every word.</p>
+
+    <!-- Paste field -->
+    <div style="margin: 32px auto 0; max-width: 560px; display: flex; gap: 10px;">
+      <div style="flex: 1; display: flex; align-items: center; gap: 10px; height: 50px; padding: 0 16px; background: #fffdf9; border: 1px solid #d8d0bf; border-radius: 10px; text-align: left;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9b9284" stroke-width="1.8" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"></path></svg>
+        <span style="color: #9b9284; font-size: 14px;">https://youtube.com/watch?v=&hellip;</span>
+      </div>
+      <button style="height: 50px; padding: 0 22px; border: none; border-radius: 10px; background: #b1502f; color: #fff; font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; font-weight: 500; cursor: pointer;">Transcribe</button>
+    </div>
+
+    <!-- Steps -->
+    <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; text-align: left;">
+      <div style="padding: 18px; background: #fffdf9; border: 1px solid #e8e2d5; border-radius: 10px;">
+        <div class="mono" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #b1502f;">01</div>
+        <div style="margin-top: 8px; font-size: 13.5px; font-weight: 500;">Paste a link</div>
+        <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.5; color: #8a8271;">Any youtube.com or youtu.be URL.</div>
+      </div>
+      <div style="padding: 18px; background: #fffdf9; border: 1px solid #e8e2d5; border-radius: 10px;">
+        <div class="mono" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #b1502f;">02</div>
+        <div style="margin-top: 8px; font-size: 13.5px; font-weight: 500;">We transcribe it</div>
+        <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.5; color: #8a8271;">Timestamped, with each speaker labeled.</div>
+      </div>
+      <div style="padding: 18px; background: #fffdf9; border: 1px solid #e8e2d5; border-radius: 10px;">
+        <div class="mono" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #b1502f;">03</div>
+        <div style="margin-top: 8px; font-size: 13.5px; font-weight: 500;">Read or search it</div>
+        <div style="margin-top: 4px; font-size: 12.5px; line-height: 1.5; color: #8a8271;">Summary up top, full transcript below.</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 12.5px; color: #a59c8a;">First transcript takes a little longer &mdash; the model downloads once, then it&rsquo;s cached.</p>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

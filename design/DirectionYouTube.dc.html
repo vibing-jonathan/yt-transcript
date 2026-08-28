@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f4f4f5; color: #3f3f46;
+      font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #2563eb; } a:hover { color: #1d4ed8; }
+    .sketch { font-family: 'Caveat', 'Comic Sans MS', cursive; }
+    .block { background: #e4e4e7; border-radius: 6px; }
+    .line { background: #d4d4d8; border-radius: 3px; height: 8px; }
+  </style>
+</helmet>
+
+<div style="width: 900px; min-height: 700px; background: #f4f4f5; padding: 28px 32px;">
+
+  <div class="sketch" style="font-size: 26px; color: #a1a1aa; margin-bottom: 4px;">Direction B &mdash; Clean light, YouTube-native</div>
+  <div style="font-size: 12.5px; color: #a1a1aa; margin-bottom: 20px; max-width: 640px; line-height: 1.5;">Familiar and low-risk: keeps today&rsquo;s card grid but tightens the type scale, spacing, and status chips. <b>Tradeoff:</b> reads like every other video app &mdash; the transcript, which is the actual product, stays a second-class citizen below the fold.</div>
+
+  <!-- wireframe -->
+  <div style="background: #fff; border: 1px solid #e4e4e7; border-radius: 10px; overflow: hidden;">
+    <!-- top -->
+    <div style="display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-bottom: 1px solid #ececee;">
+      <div class="block" style="width: 96px; height: 16px;"></div>
+      <div class="block" style="flex: 1; height: 32px; border-radius: 999px;"></div>
+      <div class="block" style="width: 32px; height: 32px; border-radius: 999px;"></div>
+    </div>
+    <!-- filter row -->
+    <div style="display: flex; gap: 8px; padding: 14px 18px 4px;">
+      <div class="block" style="width: 54px; height: 24px; border-radius: 999px; background: #3f3f46;"></div>
+      <div class="block" style="width: 70px; height: 24px; border-radius: 999px;"></div>
+      <div class="block" style="width: 62px; height: 24px; border-radius: 999px;"></div>
+      <div class="block" style="width: 80px; height: 24px; border-radius: 999px;"></div>
+    </div>
+    <!-- grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding: 16px 18px 22px;">
+      <div>
+        <div class="block" style="width: 100%; aspect-ratio: 16/9;"></div>
+        <div class="line" style="width: 90%; margin-top: 10px;"></div>
+        <div class="line" style="width: 55%; margin-top: 6px;"></div>
+        <div class="line" style="width: 40%; margin-top: 6px; height: 6px;"></div>
+      </div>
+      <div>
+        <div class="block" style="width: 100%; aspect-ratio: 16/9;"></div>
+        <div class="line" style="width: 80%; margin-top: 10px;"></div>
+        <div class="line" style="width: 60%; margin-top: 6px;"></div>
+        <div class="line" style="width: 35%; margin-top: 6px; height: 6px;"></div>
+      </div>
+      <div>
+        <div class="block" style="width: 100%; aspect-ratio: 16/9;"></div>
+        <div class="line" style="width: 95%; margin-top: 10px;"></div>
+        <div class="line" style="width: 50%; margin-top: 6px;"></div>
+        <div class="line" style="width: 45%; margin-top: 6px; height: 6px;"></div>
+      </div>
+      <div>
+        <div class="block" style="width: 100%; aspect-ratio: 16/9;"></div>
+        <div class="line" style="width: 70%; margin-top: 10px;"></div>
+        <div class="line" style="width: 58%; margin-top: 6px;"></div>
+      </div>
+      <div>
+        <div class="block" style="width: 100%; aspect-ratio: 16/9;"></div>
+        <div class="line" style="width: 88%; margin-top: 10px;"></div>
+        <div class="line" style="width: 52%; margin-top: 6px;"></div>
+      </div>
+      <div>
+        <div class="block" style="width: 100%; aspect-ratio: 16/9;"></div>
+        <div class="line" style="width: 76%; margin-top: 10px;"></div>
+        <div class="line" style="width: 62%; margin-top: 6px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sketch" style="font-size: 19px; color: #a1a1aa; margin-top: 16px;">&#8594; dense, scannable, safe &middot; summary + transcript hidden on the detail page</div>
+
+</div>
+</x-dc>
+</body>
+</html>
