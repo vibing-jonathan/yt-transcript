@@ -1,7 +1,9 @@
 FROM python:3.11-slim
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg git \
+# ffmpeg: audio extraction. git: pip installs from VCS. build-essential: Triton
+# JIT-compiles a CUDA helper at runtime on the GPU path and needs a C compiler.
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg git build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # TORCH_VARIANT=cpu (default) installs the slim CPU-only wheel from PyTorch's

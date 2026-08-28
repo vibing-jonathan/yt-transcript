@@ -37,7 +37,11 @@ The video itself is never re-hosted — playback embeds the original YouTube pla
 If you have an NVIDIA GPU with CUDA and [`nvidia-container-toolkit`](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html):
 
 1. In `.env`, set `USE_GPU=true`.
-2. `docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build worker`
+2. `docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build --force-recreate worker`
+
+`--force-recreate` matters: without it `docker compose` rebuilds the image but
+keeps the old container, so the GPU is never attached. Check with
+`docker compose exec worker python -c "import torch; print(torch.cuda.is_available())"`.
 
 Falls back to CPU automatically if no GPU is found at runtime.
 </details>
